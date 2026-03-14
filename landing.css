@@ -1,0 +1,315 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Playfair Display", serif;
+
+  /* BACKGROUND */
+
+  background-color: #ffffff;
+  background-image: url("assets/house.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 900px;
+
+  overflow: hidden;
+}
+
+/* SOFT FADE */
+
+body::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.5)
+  );
+
+  pointer-events: none;
+}
+
+/* CONTENT */
+
+.content {
+  text-align: center;
+
+  position: relative;
+
+  z-index: 2;
+
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 54px;
+  font-style: italic;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+
+  margin-bottom: 40px;
+}
+
+button {
+  padding: 14px 36px;
+
+  font-size: 16px;
+
+  border: none;
+
+  background: black;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* BEE CONTAINER */
+
+.wrap {
+  position: absolute;
+
+  top: 40%;
+  left: -120px;
+
+  z-index: 10;
+
+  animation: beeFly 12s linear infinite;
+}
+
+/* BEE MOVEMENT */
+
+@keyframes dodging1 {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 40px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.wrap2 {
+  position: absolute;
+
+  transform: scaleX(-1) scale(0.35);
+
+  animation: dodging1 1s ease-in-out infinite;
+}
+
+/* BODY */
+
+.body {
+  position: absolute;
+
+  top: 250px;
+  left: 250px;
+
+  height: 60px;
+  width: 55px;
+
+  border-radius: 100%;
+
+  background-color: #ffb733;
+
+  box-shadow:
+    45px -6px 0 #000,
+    60px -9px 0 #ffb733;
+}
+
+/* WINGS */
+
+@keyframes flutter2 {
+  0% {
+    transform: rotate(80deg);
+  }
+  50% {
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes flutter1 {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes beeFly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
+.wing1 {
+  position: absolute;
+
+  height: 40px;
+  width: 40px;
+
+  top: 225px;
+  left: 270px;
+
+  transform: rotate(20deg);
+  transform-origin: bottom right;
+
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+  border: 2px solid rgba(0, 0, 0, 0.25);
+
+  z-index: -1;
+
+  filter: blur(0.5px);
+
+  animation: flutter1 0.05s linear infinite;
+}
+
+.wing2 {
+  position: absolute;
+
+  height: 40px;
+  width: 40px;
+
+  top: 220px;
+  left: 280px;
+
+  transform: rotate(80deg);
+  transform-origin: bottom right;
+
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+  border: 2px solid rgba(0, 0, 0, 0.25);
+
+  z-index: 1;
+
+  filter: blur(0.5px);
+
+  animation: flutter2 0.05s linear infinite;
+}
+
+/* HEAD */
+
+.head {
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  background: black;
+
+  border-radius: 50%;
+
+  top: 258px;
+  left: 230px;
+
+  z-index: 2;
+}
+
+/* STINGER */
+
+.stinger {
+  position: absolute;
+
+  height: 40px;
+  width: 40px;
+
+  top: 258px; /* adjust slightly so it stays aligned */
+  left: 335px;
+
+  transform: rotate(320deg);
+
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 100%;
+
+  background-color: #000;
+
+  z-index: -1;
+}
+
+/* LEGS */
+
+.body {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.body::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50px;
+  left: 5px;
+
+  width: 8px;
+  height: 20px;
+
+  background: black;
+
+  border-radius: 4px;
+
+  box-shadow:
+    15px 0 0 black,
+    30px 0 0 black;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  body {
+    background-size: 120vw; /* house scales with screen */
+  }
+
+  .wrap {
+    top: 35%;
+  }
+}
