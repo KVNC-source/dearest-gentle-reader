@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Makes the page responsive on iPhone and other mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Secrets for you</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="paper" id="paper">
+      <!-- INNER DOTTED BORDER -->
+      <div class="inner-border"></div>
+
+      <div class="portrait">
+        <img src="assets/lady.jpeg" alt="Lady Whistledown" />
+      </div>
+
+      <h1 class="title">Keefa of the Ton</h1>
+      <h2 class="subtitle">LOVE LETTERS</h2>
+
+      <div class="tagline-block">
+        <div class="divider"></div>
+        <p class="extraordinary">
+          EXTRAORDINARY PERSON, EXTRAORDINARY CONFESSIONS
+        </p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Typed content will appear here -->
+      <div id="letter"></div>
+    </div>
+
+    <audio id="bgmusic" loop>
+      <source
+        src="assets/pov - Cover by Strings From Paris [Bridgerton Season 3 Netflix Series].mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const music = document.getElementById("bgmusic");
+
+        if (sessionStorage.getItem("playMusic") === "true") {
+          sessionStorage.removeItem("playMusic");
+
+          music.volume = 0;
+          music.play();
+
+          let vol = 0;
+
+          const fade = setInterval(() => {
+            if (vol < 0.3) {
+              vol += 0.02;
+              music.volume = vol;
+            } else {
+              clearInterval(fade);
+            }
+          }, 200);
+        }
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

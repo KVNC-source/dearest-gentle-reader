@@ -5,6 +5,6 @@ enterBtn.addEventListener("click", () => {
   document.body.style.opacity = "0";
 
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "letter.html";
   }, 600);
 });
