@@ -3,29 +3,34 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Makes the page responsive on iPhone and mobile devices -->
+    <!-- Mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dearest Gentle Reader</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="landing.css" />
 
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <div class="content">
+    <!-- Invitation Content -->
+    <main class="content">
       <h1>Dearest Gentle Reader</h1>
+
+      <div class="ornament">❦</div>
 
       <p class="subtitle">The whispers of my heart are about to unfold...</p>
 
       <button id="enterBtn">Unravel</button>
-    </div>
+    </main>
 
-    <!-- BEE -->
+    <!-- Decorative Bee -->
     <div class="wrap">
       <div class="wrap2">
         <div class="body"></div>
@@ -38,13 +43,15 @@
       </div>
     </div>
 
-    <script src="landing.js"></script>
-
+    <!-- Background Music -->
     <audio id="bgmusic">
       <source
         src="assets/pov - Cover by Strings From Paris [Bridgerton Season 3 Netflix Series].mp3"
         type="audio/mpeg"
       />
     </audio>
+
+    <!-- JavaScript -->
+    <script src="landing.js"></script>
   </body>
 </html>
