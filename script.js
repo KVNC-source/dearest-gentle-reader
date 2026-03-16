@@ -15,7 +15,7 @@ const paragraphs = [
 
   "For now, this author shall merely observe and record every memory of you, while offering his heart according to the portion he is capable of giving at this present moment. What is to come, should matters rise to greater heights, is an endeavour the author would prefer to keep to himself—for now, at least.",
 
-  "With things as they are, this author would like to say that you, dearest reader, is the living reason on why he has strength to push forward everyday. And he couldn't have asked for a more flawless and enchanting woman to pour all his love into. You are beyond compare to any soul he has ever encountered",
+  "With things as they are, this author would like to say that you, dearest reader, is the living reason on why he has strength to push forward everyday. And he couldn't have asked for a more flawless and enchanting woman to pour all his love into. You are beyond compare to any soul he has ever encountered.",
 ];
 
 /* TYPEWRITER VARIABLES */
